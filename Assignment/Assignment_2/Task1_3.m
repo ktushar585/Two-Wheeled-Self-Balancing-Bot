@@ -9,8 +9,10 @@ A = [0           0               1                 0;
      0       (g*mp)/mc        -d1/mc          -d2/(L*mc);
      0    (g*(mc+mp))/(mc*L)   -d1/(L*mc)    -(d2*(mc+mp))/(L*L*mc*mp)];
 B = [0 0 1/mc 1/(L*mc)]';
-C = [0 1 0 0]; %q2 as output
+C1 = [0 1 0 0]; %q2 as output
+C2 = [1 0 0 0]; %q1 as output
 D = 0;
+tfunc = tf(sys1)
 [num,den] = ss2tf(A,B,C,D);
 sys = tf(num,den)
 [z,p,k] = ss2zp(A,B,C,D);
