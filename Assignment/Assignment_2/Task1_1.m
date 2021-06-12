@@ -9,6 +9,8 @@ A = [0           0               1                 0;
      0       (g*mp)/mc        -d1/mc          -d2/(L*mc);
      0    (g*(mc+mp))/(mc*L)   -d1/(L*mc)    -(d2*(mc+mp))/(L*L*mc*mp)];
 B = [0 0 1/mc 1/(L*mc)]';
-C = [0 1 0 0]; %q2 as output
+C1 = [0 1 0 0]; %q2 as output
+C2 = [1 0 0 0]; %q1 as output 
 D = 0;
-sys = ss(A,B,C,D)
+sys1 = ss(A,B,C1,D)
+sys2 = ss(A,B,C2,D)
